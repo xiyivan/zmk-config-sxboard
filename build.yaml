@@ -18,6 +18,9 @@
 #     artifact-name: corne_left_with_studio
 #
 ---
+# 示例 build.yaml 内容
 include:
   - board: nice_nano_v2
-    shield: boardsource3x4
+    shield: sxboard_left
+  - board: nice_nano_v2
+    shield: sxboard_right

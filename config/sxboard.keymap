@@ -1,0 +1,47 @@
+#include <behaviors.dtsi>
+#include <dt-bindings/zmk/keys.h>
+#include <dt-bindings/zmk/bt.h>
+
+/ {
+    keymap {
+        compatible = "zmk,keymap";
+
+        default_layer {
+            bindings = <
+                // 第一行: esc, q, w, e, r, t, y, u, i, o, p, backslash
+                &kp ESC  &kp Q  &kp W  &kp E  &kp R  &kp T  &kp Y  &kp U  &kp I  &kp O  &kp P  &kp BSLH
+                
+                // 第二行: tab, a, s, d, f, g, h, j, k, l, semicolon, quote
+                &kp TAB  &kp A  &kp S  &kp D  &kp F  &kp G  &kp H  &kp J  &kp K  &kp L  &kp SEMI  &kp SQT
+                
+                // 第三行: slash, z, x, c, v, b, n, m, comma, dot
+                &kp FSLH  &kp Z  &kp X  &kp C  &kp V  &kp B  &kp N  &kp M  &kp COMMA  &kp DOT
+                
+                // 第四行: lbracket, rbracket, minus, equal
+                &kp LBKT  &kp RBKT  &kp MINUS  &kp EQUAL
+                
+                // 第五行: fn, win, lalt, space, lshift, tab, enter, space, rshift, delete, insert, esc
+                &mo 1  &kp LGUI  &kp LALT  &kp SPACE  &kp LSFT  &kp TAB  &kp ENTER  &kp SPACE  &kp RSFT  &kp DEL  &kp INS  &kp ESC
+            >;
+        };
+
+        fn_layer {
+            bindings = <
+                // 第一行: 功能键
+                &trans  &kp F1  &kp F2  &kp F3  &kp F4  &kp F5  &kp F6  &kp F7  &kp F8  &kp F9  &kp F10  &trans
+                
+                // 第二行: 功能键
+                &trans  &kp F11  &kp F12  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
+                
+                // 第三行: 媒体控制
+                &trans  &kp PREV  &kp PLAY  &kp NEXT  &kp VOL_DN  &kp VOL_UP  &kp MUTE  &trans  &trans  &trans
+                
+                // 第四行: 蓝牙控制 (原bt_layer功能已整合至此)
+                &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_CLR  &bootloader
+                
+                // 第五行: 返回默认层，其他功能键
+                &to 0  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
+            >;
+        };
+    };
+};

@@ -1,0 +1,5 @@
+config SHIELD_SXBOARD_LEFT
+    def_bool $(shields_list_contains,sxboard_left)
+
+config SHIELD_SXBOARD_RIGHT
+    def_bool $(shields_list_contains,sxboard_right)
