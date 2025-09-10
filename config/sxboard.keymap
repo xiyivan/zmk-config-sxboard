@@ -34,7 +34,7 @@
                 &trans  &kp F11  &kp F12  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
                 
                 // 第三行: 媒体控制
-                &trans  &kp PREV  &kp PLAY  &kp NEXT  &kp VOL_DN  &kp VOL_UP  &kp MUTE  &trans  &trans  &trans
+                &trans  &trans  &kp PLAY  &kp NEXT  &kp VOL_DN  &kp VOL_UP  &kp MUTE  &trans  &trans  &trans
                 
                 // 第四行: 蓝牙控制 (原bt_layer功能已整合至此)
                 &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_CLR  &bootloader
