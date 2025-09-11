@@ -21,17 +21,17 @@
                 &kp LBKT  &kp RBKT  &kp MINUS  &kp EQUAL
                 
                 // 第五行: fn, win, lalt, space, lshift, tab, enter, space, rshift, delete, insert, esc
-                &mo 1  &kp LGUI  &kp LALT  &kp SPACE  &kp LSFT  &kp TAB  &kp ENTER  &kp SPACE  &kp RSFT  &kp DEL  &kp INS  &kp ESC
+                &mo 1  &kp LGUI  &kp LALT  &kp SPACE  &kp LSFT  &kp TAB  &kp ENTER  &kp SPACE  &kp RSFT  &kp DEL  &kp BSPC  &kp ESC
             >;
         };
 
         fn_layer {
             bindings = <
                 // 第一行: 功能键
-                &trans  &kp F1  &kp F2  &kp F3  &kp F4  &kp F5  &kp F6  &kp F7  &kp F8  &kp F9  &kp F10  &trans
+                &kp F1  &kp F2  &kp F3  &kp F4  &kp F5  &kp F6  &kp F7  &kp F8  &kp F9  &kp F10  &kp F11 &kp F12
                 
                 // 第二行: 功能键
-                &trans  &kp F11  &kp F12  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
+                &trans  &kp N1  &kp N2  &kp N3  &kp N4  &kp N5  &kp N6  &kp N7  &kp N8  &kp N9  &kp N0  &trans
                 
                 // 第三行: 媒体控制
                 &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
