@@ -1,6 +1,7 @@
 /*
- * 键盘矩阵配置 - 右半边 (5行6列)
- * 与左半边对称：第3行第6列(物理RC(2,5))为空，第4行只有2个键
+ * 2x2 键盘矩阵配置
+ * 行: 0.06, 0.08
+ * 列: 0.17, 0.20
  */
 
 #include <dt-bindings/zmk/matrix_transform.h>
@@ -8,25 +9,18 @@
 / {
     chosen {
         zmk,kscan = &kscan0;
-        // 必须取消注释这一行！这是链接错误的关键原因
         zmk,matrix_transform = &default_transform;
     };
 
     default_transform: keymap_transform_0 {
         compatible = "zmk,matrix-transform";
-        rows = <5>;
-        columns = <6>;
-        col-offset = <6>; // 关键的偏移量设置
+        rows = <2>;
+        columns = <2>;
         
-        // 矩阵映射 - 与左半边对称
-        // 第3行(索引2)最右侧的键为空（RC(2,5)空缺）
-        // 第4行(索引3)只有2个键，位于偏右侧的位置
+        // 2x2 矩阵映射
         map = <
-            RC(0,0) RC(0,1) RC(0,2) RC(0,3) RC(0,4) RC(0,5)
-            RC(1,0) RC(1,1) RC(1,2) RC(1,3) RC(1,4) RC(1,5)
-            RC(2,0) RC(2,1) RC(2,2) RC(2,3) RC(2,4)        // RC(2,5) 空缺
-                                    RC(3,3) RC(3,4)        // 只有2个键
-            RC(4,0) RC(4,1) RC(4,2) RC(4,3) RC(4,4) RC(4,5)
+            RC(0,0) RC(0,1)
+            RC(1,0) RC(1,1)
         >;
     };
 
@@ -36,23 +30,16 @@
         
         diode-direction = "col2row";
         
-        // 行 GPIO 配置 (5行) - 需要根据右半边实际PCB布线修改！
+        // 行 GPIO 配置 (2行)
         row-gpios
-            = <&gpio0 10 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
-            , <&gpio0 9  (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
-            , <&gpio0 8  (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
-            , <&gpio0 7  (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
-            , <&gpio0 6  (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
+            = <&gpio0 6 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>  // 行0: 0.06
+            , <&gpio0 8 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>  // 行1: 0.08
             ;
         
-        // 列 GPIO 配置 (6列) - 需要根据右半边实际PCB布线修改！
+        // 列 GPIO 配置 (2列)
         col-gpios
-            = <&gpio0 15 GPIO_ACTIVE_HIGH>
-            , <&gpio0 14 GPIO_ACTIVE_HIGH>
-            , <&gpio0 13 GPIO_ACTIVE_HIGH>
-            , <&gpio0 12 GPIO_ACTIVE_HIGH>
-            , <&gpio0 11 GPIO_ACTIVE_HIGH>
-            , <&gpio0 5  GPIO_ACTIVE_HIGH>
+            = <&gpio0 17 GPIO_ACTIVE_HIGH>  // 列0: 0.17
+            , <&gpio0 20 GPIO_ACTIVE_HIGH>  // 列1: 0.20
             ;
     };
 };
