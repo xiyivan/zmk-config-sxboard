@@ -20,7 +20,7 @@
                 // 第四行: lbracket, rbracket, minus, equal
                 &kp LBKT  &kp RBKT  &kp MINUS  &kp EQUAL
                 
-                // 第五行: fn, win, lalt, space, lshift, tab, enter, space, rshift, delete, insert, esc
+                // 第五行: fn, win, lalt, space, lshift, tab, enter, space, rshift, delete, backspace, esc
                 &mo 1  &kp LGUI  &kp LALT  &kp SPACE  &kp LSFT  &kp TAB  &kp ENTER  &kp SPACE  &kp RSFT  &kp DEL  &kp BSPC  &kp ESC
             >;
         };
